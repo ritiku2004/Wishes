@@ -35,6 +35,7 @@ let currentMessageIndex = 0;
 const messageElement = document.querySelector(".message");
 
 function changeMessage() {
+    
     // Change the text of the message
     messageElement.textContent = messages[currentMessageIndex];
 
@@ -45,3 +46,12 @@ function changeMessage() {
 // Start the message cycle
 changeMessage();
 setInterval(changeMessage, 4000); // Change every 6 seconds (same duration as animation)
+
+    document.getElementById('playButton').addEventListener('click', function() {
+        const audio = document.getElementById('audio');
+        audio.muted = false; // Unmute the audio
+        audio.play().catch(error => {
+            console.log('Audio playback failed', error);
+        });
+    });
+
