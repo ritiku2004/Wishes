@@ -213,3 +213,34 @@ body {
         width: 60px; /* Slightly bigger balloons for mobile */
     }
 }
+/* Basic styles */
+.play-btn {
+    position: absolute;
+    bottom: 10rem;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-size: 14px; /* Font size */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Hover effect */
+.play-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+/* Focus effect */
+.play-btn:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.7); /* Green glow around the button */
+}
+
+/* Active effect */
+.play-btn:active {
+    background-color: #388e3c; /* Darker green when button is clicked */
+    transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
