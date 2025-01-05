@@ -1,0 +1,215 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(to bottom, #fff9f9, #ffe6e6);
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Birthday Banner */
+.birthday-banner {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.birthday-banner h1 {
+    font-size: 3rem;
+    color: #ff6699;
+    margin: 0;
+}
+
+/* Container styling */
+.message-container {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+    width: 90%; /* Adjusted for better mobile fit */
+    padding: 10px;
+}
+
+/* Styling for the text with transition */
+.message {
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Animation for the text changes */
+@keyframes changeText {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.message-container .message {
+    animation: changeText 8s infinite;
+}
+
+/* Card Container */
+.card-container {
+    position: relative;
+    width: 20%;
+    height: 50%;
+    perspective: 1200px;
+    margin: 20px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: absolute;
+    width: 85%; /* Adjusted width for better fit */
+    height: 85%; /* Adjusted height for consistency */
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: rotateY(90deg);
+    backface-visibility: hidden;
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 1s ease-in-out;
+}
+
+.card.active {
+    transform: rotateY(0deg);
+    opacity: 1;
+    z-index: 2;
+}
+
+.card.next {
+    transform: rotateY(-90deg);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* Decorations */
+.decorations {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balloon {
+    position: absolute;
+    width: 120px; /* Larger balloons */
+    animation: float 6s infinite ease-in-out;
+}
+
+.balloon1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.balloon2 {
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.gift {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px; /* Larger gift image */
+}
+
+/* Balloon Float Animation */
+@keyframes float {
+    0% {
+        transform: translateY(150px);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(150px);
+    }
+}
+
+/* Mobile and Tablet Responsiveness */
+@media (max-width: 768px) {
+    .birthday-banner h1 {
+        font-size: 2.5rem; /* Adjust heading font size */
+    }
+
+    .message-container {
+        font-size: 24px; /* Adjust text size for mobile */
+        width: 90%;
+        padding: 5px;
+    }
+
+    .card-container {
+        width: 90%;
+        height: 300px; /* Adjust card height */
+    }
+
+    .card {
+        width: 90%;
+        height: 90%;
+    }
+
+    .gift {
+        width: 220px; /* Slightly smaller gift for tablets */
+    }
+
+    .balloon {
+        width: 100px; /* Adjust balloon size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .birthday-banner h1 {
+        font-size: 2rem; /* Smaller font size for very small screens */
+    }
+
+    .message-container {
+        font-size: 20px; /* Smaller font size for mobile */
+        width: 100%;
+        padding: 5px;
+    }
+
+    .card-container {
+        width: 100%;
+        height: 550px; /* Adjust height for small screens */
+    }
+
+    .card {
+        width: 85%; /* Ensure cards fit better on small screens */
+        height: 80%;
+    }
+
+    .gift {
+        width: 180px; /* Adjust size for small screens */
+    }
+
+    .balloon {
+        width: 60px; /* Slightly bigger balloons for mobile */
+    }
+}
